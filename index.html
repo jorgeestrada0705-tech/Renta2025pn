@@ -16,11 +16,11 @@
 <meta name="twitter:image" content="og-image.png">
 <meta name="description" content="Guía Declaración de Renta Personas Naturales 2025. Vencimientos por cédula, documentos y sanciones DIAN.">
 <style>
-:root{--amarillo:#FCD116;--azul:#003893;--rojo:#CE1126;--verde:#1a7a4a;--verde-claro:#e8f5ee;--naranja:#e07b00;--naranja-claro:#fff3e0;--rojo-claro:#fdecea;--azul-claro:#e8eef8;--gris:#f4f6f9;--gris-medio:#dce3ed;--texto:#1a2340;--sombra:0 4px 18px rgba(0,56,147,0.10);}
+:root{--amarillo:#FCD116;--azul:#003893;--rojo:#CE1126;--rojo-oscuro:#8a0f1f;--verde:#1a7a4a;--verde-claro:#e8f5ee;--naranja:#e07b00;--naranja-claro:#fff3e0;--rojo-claro:#fdecea;--azul-claro:#e8eef8;--gris:#f4f6f9;--gris-medio:#dce3ed;--texto:#1a2340;--sombra:0 4px 18px rgba(0,56,147,0.10);}
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Segoe UI',Arial,sans-serif;background:var(--gris);color:var(--texto);min-height:100vh;}
 .flag-stripe{height:8px;background:linear-gradient(to right,var(--amarillo) 33.3%,var(--azul) 33.3% 66.6%,var(--rojo) 66.6%);}
-header{background:var(--azul);color:#fff;padding:22px 20px 18px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+header{background:linear-gradient(135deg,var(--azul) 0%,#002566 100%);color:#fff;padding:22px 20px 18px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;box-shadow:0 2px 12px rgba(0,0,0,0.15);}
 .avatar-svg{width:80px;height:80px;flex-shrink:0;}
 .header-info h1{font-size:1.25rem;font-weight:700;line-height:1.3;}
 .header-info .subtitle{font-size:0.82rem;opacity:0.85;margin-top:3px;}
@@ -43,43 +43,48 @@ header{background:var(--azul);color:#fff;padding:22px 20px 18px;display:flex;ali
 .modal-dig{font-size:0.9rem;color:#555;margin-bottom:4px;}
 .modal-close{background:var(--azul);color:#fff;border:none;border-radius:8px;padding:10px 28px;font-size:0.95rem;font-weight:700;cursor:pointer;margin-right:8px;}
 .modal-ver{background:var(--verde);color:#fff;border:none;border-radius:8px;padding:10px 20px;font-size:0.95rem;font-weight:700;cursor:pointer;}
-.badge-urgente{background:var(--rojo-claro);color:var(--rojo);border-radius:6px;padding:6px 12px;font-size:0.82rem;font-weight:600;margin:8px 0;display:inline-block;}
+.badge-urgente{background:var(--rojo);color:#fff;border-radius:6px;padding:6px 14px;font-size:0.85rem;font-weight:700;margin:8px 0;display:inline-block;box-shadow:0 2px 8px rgba(206,17,38,0.35);}
 .tabs-nav{background:#fff;display:flex;overflow-x:auto;border-bottom:3px solid var(--gris-medio);box-shadow:var(--sombra);}
-.tab-btn{padding:14px 18px;font-size:0.88rem;font-weight:600;color:#666;border:none;background:none;cursor:pointer;white-space:nowrap;border-bottom:3px solid transparent;margin-bottom:-3px;transition:all 0.2s;}
-.tab-btn:hover{color:var(--azul);}
-.tab-btn.active{color:var(--azul);border-bottom-color:var(--azul);background:var(--azul-claro);}
+.tab-btn{padding:14px 18px;font-size:0.88rem;font-weight:700;color:#555;border:none;background:none;cursor:pointer;white-space:nowrap;border-bottom:3px solid transparent;margin-bottom:-3px;transition:all 0.2s;}
+.tab-btn:hover{color:var(--azul);background:var(--azul-claro);}
+.tab-btn.active{color:var(--azul);border-bottom-color:var(--rojo);background:var(--azul-claro);}
 .tab-content{display:none;padding:24px 20px;max-width:900px;margin:0 auto;animation:fadeIn 0.3s;}
 .tab-content.active{display:block;}
-.card{background:#fff;border-radius:12px;padding:20px;margin-bottom:16px;box-shadow:var(--sombra);}
-.card-title{font-size:1rem;font-weight:700;color:var(--azul);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.card{background:#fff;border-radius:12px;padding:20px;margin-bottom:16px;box-shadow:var(--sombra);transition:transform 0.2s,box-shadow 0.2s;}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(0,56,147,0.16);}
+.card-title{font-size:1.05rem;font-weight:800;color:var(--azul);margin-bottom:14px;display:flex;align-items:center;gap:8px;border-bottom:2px solid var(--azul-claro);padding-bottom:10px;}
 .req-list{list-style:none;}
 .req-list li{padding:9px 0;border-bottom:1px solid var(--gris-medio);font-size:0.88rem;display:flex;gap:8px;line-height:1.5;}
 .req-list li:last-child{border-bottom:none;}
 .req-list li::before{content:"✔";color:var(--verde);font-weight:700;flex-shrink:0;margin-top:2px;}
 .umbral-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;margin-top:4px;}
-.umbral-card{background:var(--azul-claro);border-radius:10px;padding:14px;text-align:center;}
+.umbral-card{background:var(--azul-claro);border-radius:10px;padding:14px;text-align:center;transition:transform 0.2s,box-shadow 0.2s;}
+.umbral-card:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,56,147,0.18);}
 .umbral-card .uvt{font-size:1.4rem;font-weight:800;color:var(--azul);}
-.umbral-card .pesos{font-size:0.78rem;color:var(--verde);font-weight:700;margin:2px 0;}
-.umbral-card .concepto{font-size:0.75rem;color:#555;}
+.umbral-card .pesos{font-size:0.82rem;color:var(--verde);font-weight:800;margin:3px 0;}
+.umbral-card .concepto{font-size:0.75rem;color:#444;font-weight:600;}
 .table-wrapper{overflow-x:auto;}
 table{width:100%;border-collapse:collapse;font-size:0.88rem;}
 th{background:var(--azul);color:#fff;padding:10px 12px;text-align:left;}
 td{padding:9px 12px;border-bottom:1px solid var(--gris-medio);}
 tr:hover td{background:var(--azul-claro);}
 tr.proxima td{background:var(--verde-claro)!important;font-weight:700;}
-tr.vencida td{color:#aaa;}
+tr.vencida td{color:#94a0b8;text-decoration:line-through;text-decoration-color:#c3cbdb;}
 .badge-mes{background:var(--amarillo);color:var(--azul);border-radius:4px;padding:2px 8px;font-size:0.75rem;font-weight:700;display:inline-block;}
-.sancion-card{border-left:4px solid var(--rojo);background:var(--rojo-claro);border-radius:0 10px 10px 0;padding:14px 16px;margin-bottom:12px;}
-.sancion-card .art{font-size:0.75rem;color:var(--rojo);font-weight:700;margin-bottom:4px;}
-.sancion-card h3{font-size:0.95rem;font-weight:700;color:var(--texto);margin-bottom:6px;}
-.sancion-card p{font-size:0.85rem;color:#444;line-height:1.5;}
-.sancion-card .formula{background:#fff;border-radius:6px;padding:8px 12px;margin-top:8px;font-size:0.82rem;font-family:monospace;color:var(--rojo);line-height:1.7;}
-.contacto-card{background:var(--azul);color:#fff;border-radius:14px;padding:24px;text-align:center;margin-bottom:16px;}
+.sancion-card{border-left:5px solid var(--rojo);background:#fff;border-radius:0 12px 12px 0;padding:18px 20px;margin-bottom:16px;box-shadow:var(--sombra);transition:transform 0.2s,box-shadow 0.2s;}
+.sancion-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(206,17,38,0.18);}
+.sancion-card .art{display:inline-block;font-size:0.72rem;color:#fff;background:var(--rojo);font-weight:800;letter-spacing:0.3px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:10px;}
+.sancion-card h3{font-size:1.05rem;font-weight:800;color:var(--texto);margin-bottom:8px;}
+.sancion-card p{font-size:0.9rem;color:#333;line-height:1.6;}
+.sancion-card .formula{background:#fff5f5;border:1px solid #f3c2c8;border-radius:8px;padding:10px 14px;margin-top:10px;font-size:0.85rem;font-family:'Courier New',monospace;font-weight:700;color:var(--rojo-oscuro);line-height:1.8;}
+.contacto-card{background:linear-gradient(135deg,var(--azul) 0%,#002566 100%);color:#fff;border-radius:14px;padding:24px;text-align:center;margin-bottom:16px;box-shadow:var(--sombra);}
 .contacto-card h2{font-size:1.1rem;margin-bottom:4px;}
 .contacto-card .tp{font-size:0.8rem;opacity:0.8;margin-bottom:18px;}
 .contacto-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:14px;}
-.btn-wp{background:#25D366;color:#fff;text-decoration:none;border-radius:8px;padding:11px 22px;font-weight:700;font-size:0.95rem;display:inline-flex;align-items:center;gap:6px;}
-.btn-mail{background:var(--amarillo);color:var(--azul);text-decoration:none;border-radius:8px;padding:11px 22px;font-weight:700;font-size:0.95rem;display:inline-flex;align-items:center;gap:6px;}
+.btn-wp{background:#25D366;color:#fff;text-decoration:none;border-radius:8px;padding:11px 22px;font-weight:700;font-size:0.95rem;display:inline-flex;align-items:center;gap:6px;transition:transform 0.2s,box-shadow 0.2s;}
+.btn-wp:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(37,211,102,0.4);}
+.btn-mail{background:var(--amarillo);color:var(--azul);text-decoration:none;border-radius:8px;padding:11px 22px;font-weight:700;font-size:0.95rem;display:inline-flex;align-items:center;gap:6px;transition:transform 0.2s,box-shadow 0.2s;}
+.btn-mail:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(252,209,22,0.5);}
 .alert{border-radius:10px;padding:14px 16px;margin-bottom:14px;font-size:0.88rem;line-height:1.5;}
 .alert-info{background:var(--azul-claro);border-left:4px solid var(--azul);}
 .alert-warn{background:var(--naranja-claro);border-left:4px solid var(--naranja);}
